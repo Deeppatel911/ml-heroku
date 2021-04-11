@@ -1,0 +1,192 @@
+<!--
+<html>
+   <body>
+   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<br>
+<br>
+<br>
+<br>
+       <h2>Mail category classifer</h2>
+<div class="login">
+      <form action = "http://localhost:8000/result" method = "POST">
+	  <div class="loginTitle">
+         <h2><p>Please Enter the subject<br><br><br> <input type = "text" name = "Data" /></p></h2>
+				<BR><br><br>
+         <p><input type = "submit" value = "submit" /></p></div>
+      </form>
+</div>
+   </body>
+</html>
+!-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- for FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="font_style.css">
+
+    <title>AI Based Email Classifier</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(10deg, #e66846, #913346);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.resuls {
+    display: flex;
+    justify-content: bottom;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(222, 219, 211, 0.3);
+    color: black;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 10px;
+	text-align: center;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(222, 219, 211, 0.3);
+    color: black;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 10px;
+	
+}
+.texst {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(222, 219, 211, 0.3);
+    color: black;
+    width: 50rem;
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.loginForm {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.loginTitle {
+    color: black;
+    letter-spacing: 1px;
+}
+
+.loginTitle h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+input[type='email'], input[type='password'] {
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    height: 1.3rem;
+    padding-left: 0.5rem;
+    color: black;
+    transition: background 0.5s;
+}
+
+input[type='email']:focus, input[type='password']:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+}
+
+button[type="submit"] {
+    border: none;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20px;
+    outline: none;
+    background: rgba(1, 1, 1);
+    font-family: inherit;
+    letter-spacing: 1px;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+}
+
+button[type="submit"]:hover {
+    background: #303030;
+}
+
+.button-submit {
+    display: inherit;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+label p {
+    margin-bottom: 5px;
+}
+	</style>
+  </head>
+
+  <body>
+  <!--  -->
+
+      <div class="texst">
+          <h1 class="my-5" style="font-family: 'Pangolin', cursive;">Mail category classifer</h1>
+      </div>
+      
+      <div class="login">
+          <form class="loginForm" action = "http://localhost:8000/result" method = "POST">
+
+              <div class="loginTitle">
+                  <h3 class="my-3" style="font-family: 'Pangolin', cursive;">Please Enter the subject</h3>
+              </div>
+
+              <center><input style="font-family: 'Pangolin', cursive;" type="text" class="my-4" name="Data"></center>
+                 
+              <center><button style="font-family: 'Pangolin', cursive;" type="submit" class="btn btn-primary mt-4">Submit</button></center>
+
+          </form>
+		  
+	
+      </div>
+	  <br>
+	  <div class="resuls" align="center"><h1>
+		 <p> {{ result }}</p></h1>
+		 </div>
+
+  <!--  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
