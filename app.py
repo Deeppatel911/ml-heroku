@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-app = Flask(__name__) 
+app = Flask(__name__,template_folder = r"C:\Users\Deepnil Vasava\eclipse\mail original") 
                                                                                    
     
 
@@ -30,4 +30,4 @@ def result():
       return render_template("text_pred.html",result = result_pred)
 
 if __name__ == '__main__':
-   app.run(host="localhost", port=8000, debug=True)
+   app.run(debug=True)

@@ -165,7 +165,7 @@ label p {
       </div>
       
       <div class="login">
-          <form class="loginForm" action = "http://localhost:8000/result" method = "POST">
+          <form class="loginForm" action = "{{ url_for('result')}}" method = "POST">
 
               <div class="loginTitle">
                   <h3 class="my-3" style="font-family: 'Pangolin', cursive;">Please Enter the subject</h3>
